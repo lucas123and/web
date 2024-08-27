@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ráfaga de Números y Palabras: Desafío de Velocidad con Números y Palabras</title>
+    </head>
+<body>
+    <div id="contenedor"></div>
+    <template id="Template">
+        <div class="container">
+            <div class="buttons animated fadeInDown">
+                <div><h1>RAFAGA DE NUMEROS Y PALABRAS</h1></div>
+                <div>
+                    <button onclick="teclado()" class="button">TECLADO</button>
+                </div>
+                <div>
+                <button onclick="facilm()" class="button">MOUSE</button>
+                </div>
+            <div class="game-description animated fadeInUp">
+                <p>El juego trata de escribir rápidamente números y palabras dentro del tiempo dado para mejorar la velocidad de la escritura y mejorar la rapidez del mouse.
+                    <h2>SI ELEGIS</h2>
+                    Teclado: vas a tener que escribir (en minuscula) rapidamente numeros o palabras (vos elegis) dentro del tiempo dado.
+                    <p>Mouse: vas a tener que presionar la mayor cantidad de veces el mouse rapidamente en el sector donde dice AQUI dentro del tiempo dado(10s).</p>
+                </p>
+            </div>
+    </template>
+    <template id="TYM">
+        <div class="container">
+                <div class="buttons animated fadeInDown">
+                    <div>
+                        <h2>NÚMEROS</h2>
+                        <button onclick="facil()" class="button">FACIL (5s)</button>
+                        <button onclick="medio()" class="button">MEDIO (3s)</button>
+                        <h5></h5>
+                        <button onclick="dificil()" class="button">DIFICIL (2s)</button>
+                    </div>
+                    <div >
+                        <H5>-</H5>
+                        <H5>-</H5>
+                        <H5>-</H5>
+                        <H5>-</H5>
+                        <button id="facil" onclick="volver()" class="button">VOLVER</button>
+                    </div>
+                    <div>
+                        <h2>PALABRAS</h2>
+                        <button onclick="facil()" class="button">FACIL (5s)</button>
+                        <button onclick="medio()" class="button">MEDIO (3s)</button>
+                        <h5></h5>
+                        <button onclick="dificil()" class="button">DIFICIL (2s)</button>
+                    </div>
+            </div>
+            </div>  
+    </template>
+    <template id="FIN">
+        <div class="container">
+            <div><h1>RAFAGA DE NUMEROS Y PALABRAS</h1></div>
+            <p id="pilas"></p>
+                <p id="resultados"></p>
+                    <div class="buttons">
+                        <button id="facil" onclick="volver()" class="button"></button>
+                        <button id="resetPage" onclick="reset2()" class="button">RESET</button>
+                    </div>
+            </div>
+    </template>
+    <template id="mouse">
+        <div class="container">
+            <div class="buttons animated fadeInDown">
+                <div>
+                    <button id="1"  class="button">NO</button>
+                    <button id="2"  class="button">NO</button>
+                    <button id="3"  class="button">NO</button>
+                    <button id="4"  class="button">NO</button>
+                    <button id="5"  class="button">NO</button>
+                    <button id="6"  class="button">NO</button>
+                    <button id="7"  class="button">NO</button>
+                    <button id="8"  class="button">NO</button>
+                    <button id="9"  class="button">NO</button>
+                    <button id="10" class="button">NO</button>
+                    <button id="11" class="button">NO</button>
+                    <button id="12" class="button">NO</button>
+                    <button id="13" class="button">NO</button>
+                    <button id="14" class="button">NO</button>
+                    <button id="15" class="button">NO</button>
+                    <button id="16" class="button">NO</button>
+                    <button id="17" class="button">NO</button>
+                    <button id="18" class="button">NO</button>
+                    <button id="19" class="button">NO</button>
+                    <button id="20" class="button">NO</button>
+                    <button id="21" class="button">NO</button>
+                    <button id="22" class="button">NO</button>
+                    <button id="23" class="button">NO</button>
+                    <button id="24" class="button">NO</button>
+                    <button id="25" class="button">NO</button>
+                    <button id="26" class="button">NO</button>
+                    <button id="27" class="button">NO</button>
+                    <button id="28" class="button">NO</button>
+                    <button id="29" class="button">NO</button>
+                    <button id="30" class="button">NO</button>
+                    <button id="31" class="button">NO</button>
+                    <button id="32" class="button">NO</button>
+                    <button id="33" class="button">NO</button>
+                    <button id="34" class="button">NO</button>
+                    <button id="35" class="button">NO</button>
+                        <p id="resultados"></p>
+                    <div class="buttons"> 
+                        <button id="facil" onclick="volver()" class="button"></button>
+                        <button id="resetPage" onclick="reset2()" class="button">RESET</button>
+            </div>
+    </template>
+    <template id="nivelTemplate">
+        <div class="container">
+            <div class="buttons animated fadeInDown">
+                <div>
+                    <h2>NÚMEROS</h2>
+                    <button onclick="facil()" class="button">FACIL (5s)</button>
+                    <button onclick="medio()" class="button">MEDIO (3s)</button>
+                    <h5></h5>
+                    <button onclick="dificil()" class="button">DIFICIL (2s)</button>
+                </div>
+                <div >
+                    <H5>-</H5>
+                    <H5>-</H5>
+                    <H5>-</H5>
+                    <H5>-</H5>
+                    <button id="facil" onclick="volver()" class="button">VOLVER</button>
+                </div>
+                <div>
+                    <h2>PALABRAS</h2>
+                    <button onclick="facil1()" class="button">FACIL (5s)</button>
+                    <button onclick="medio2()" class="button">MEDIO (3s)</button>
+                    <h5></h5>
+                    <button onclick="dificil3()" class="button">DIFICIL (2s)</button>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="numeroTemplate">
+        <div class="container animated fadeIn">
+            <div class="buttons">
+            </div>
+            <h1 class="tomas">Ráfaga de Números y Palabras</h1>
+            <div class="game-content">
+                <h1 id="gato">0</h1>
+                <p id="resultado"></p>
+                <p id="resultados"></p>
+                <p id="tempo"></p>
+                <input type="text" id="userInput" autofocus>
+            </div>
+            <div class="buttons">
+                <button id="facil" onclick="facil()" class="button"></button>
+                <button id="resetPage" onclick="resett()" class="button">RESET</button>
+            </div>
+        </div>
+    </template>
+
+    <template id="palabraTemplate">
+        <div class="container animated fadeIn">
+            <h1 class="tomas">Ráfaga de Números y Palabras</h1>
+            <div class="game-content">
+                <h1 id="gato"></h1>
+                <p id="resultado"></p>
+                <p id="resultados"></p>
+                <p id="tempo"></p>
+                <input type="text" id="userInput" autofocus>
+            </div>
+            <div class="buttons">
+                <button id="facil" onclick="facil()" class="button"></button>
+                <button id="resetPage" onclick="reset()" class="button">RESET</button>
+            </div>
+        </div>
+    </template>
+       <script src="js/expenses.js"></script>
+       <script src="js/index.js"></script>
+       <style>
+        @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to { animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); }
+    0% { opacity: 0; transform: scale3d(0.3, 0.3, 0.3); }
+    20% { transform: scale3d(1.1, 1.1, 1.1); }
+    40% { transform: scale3d(0.9, 0.9, 0.9); }
+    60% { opacity: 1; transform: scale3d(1.03, 1.03, 1.03); }
+    80% { transform: scale3d(0.97, 0.97, 0.97); }
+    to { opacity: 1; transform: scale3d(1, 1, 1); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes swing {
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-10deg); }
+    60% { transform: rotate(5deg); }
+    80% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    10% { transform: translateX(-10px); }
+    20% { transform: translateX(10px); }
+    30% { transform: translateX(-10px); }
+    40% { transform: translateX(10px); }
+    50% { transform: translateX(-10px); }
+    60% { transform: translateX(10px); }
+    70% { transform: translateX(-10px); }
+    80% { transform: translateX(10px); }
+    90% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+body {
+    background-color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #eee;
+}
+
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #444;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+.game-content {
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.button:hover {
+    background-color: #2980b9;
+    animation: swing 0.5s;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    animation: shake 0.5s;
+}
+
+#gato {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(141, 141, 141);
+    color: #34495e;
+    width: 180px; 
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px; 
+    text-align: center;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+#resultados {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(141, 141, 141); 
+    color: #34495e; 
+    width: 150px;
+    font-size: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+
+.tomas {
+    font-size: 24px; 
+    color: #eee;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.animated.fadeInDown {
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.animated.fadeInUp {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.animated.zoomIn {
+    animation: zoomIn 1s ease-in-out;
+}
+
+.animated.bounceIn {
+    animation: bounceIn 1s ease-in-out;
+}
+
+.animated.swing {
+    animation: swing 1s ease-in-out;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .tomas {
+        font-size: 20px; 
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    input[type="text"] {
+        padding: 8px;
+    }
+
+    #gato {
+        font-size: 18px; 
+        padding: 8px;
+    }
+
+    #resultados {
+        font-size: 18px;
+    }
+}
+
+    </style>
+</body>
+</html>
