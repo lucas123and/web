@@ -1,0 +1,10 @@
+git config --global user.name "lucas"
+git config --global user.email "lucasandrada141@gmail.com"
+git config --list para ver si se coloco
+cd c: para crear acceder a c
+cd ../ para volver al lugar anterior
+mkdir repo para crear carpeta
+rmdir para borrar carpeta
+cd repo para acceder a repo
+git init para iniciar git en esa carpeta
+
