@@ -7,4 +7,9 @@ mkdir repo para crear carpeta
 rmdir para borrar carpeta
 cd repo para acceder a repo
 git init para iniciar git en esa carpeta
+git add archivo.txt para preparar el archivo para subir al repositorio
+git status para ver si esta listo
+git commit -m "agregando los archivos" para inicializar la subida
+
+
 
