@@ -11,5 +11,12 @@ git add archivo.txt para preparar el archivo para subir al repositorio
 git status para ver si esta listo
 git commit -m "agregando los archivos" para inicializar la subida
 
+clonar repo
+mkdir repo-nuevo
+cd repo-nuevo
+code .
+git clone https://github.com/lucas123and/web.git
+
+
 
 
